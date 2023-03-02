@@ -16,27 +16,27 @@ unhealthy=150
 very_unhealthy=200
 hazardous=300
 
-aqi=$(python3 "$(dirname $0)"/main.py)
+aqi=$(python3 "$(dirname "$0")"/main.py)
 
 color='palegreen'
 level='Good'
-if [ $aqi -gt $hazardous ]
+if [[ $aqi -gt $hazardous ]]
 then
     color='brown'
     level='Hazardous'
-elif [ $aqi -gt $very_unhealthy ]
+elif [[ $aqi -gt $very_unhealthy ]]
 then
     color='plum'
     level='Very Unhealthy'
-elif [ $aqi -gt $unhealthy ]
+elif [[ $aqi -gt $unhealthy ]]
 then
     color='tomato'
     level='Unhealthy'
-elif [ $aqi -gt $unhealthy_sens ]
+elif [[ $aqi -gt $unhealthy_sens ]]
 then
     color='orange'
     level='Unhealthy for Sensitive Groups'
-elif [ $aqi -gt $moderate ]
+elif [[ $aqi -gt $moderate ]]
 then
     color='yellow2'
     level='Moderate'
