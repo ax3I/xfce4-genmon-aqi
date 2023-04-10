@@ -1,3 +1,4 @@
+""" Get AQI from waqi.info by city name """
 import json
 
 import requests
@@ -15,11 +16,11 @@ def get_aqi(city, token) -> int:
 
     json_data = json.loads(response.text)
     aqi = json_data["data"]["aqi"]
-    return print(aqi)
+    return aqi
 
 
 def main():
-    get_aqi(city=CITY, token=TOKEN)
+    print(get_aqi(city=CITY, token=TOKEN))
 
 
 if __name__ == "__main__":
