@@ -10,6 +10,7 @@ CITY = config.DEFAULT_CONFIG["CITY"]
 
 
 def get_aqi(city, token) -> int:
+    """ Get AQI by City name """
     response = requests.get(
         f"http://api.waqi.info/feed/{city}/?token={token}", timeout=5
     )
@@ -20,6 +21,7 @@ def get_aqi(city, token) -> int:
 
 
 def main():
+    """ Main function """
     print(get_aqi(city=CITY, token=TOKEN))
 
 
